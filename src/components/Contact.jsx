@@ -16,7 +16,6 @@ const Contact = () => {
     setIsSubmitted(true);
     reset();
     
-    // Reset the success message after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
     }, 5000);
@@ -171,7 +170,7 @@ const Contact = () => {
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
                 )}
-              </div>
+              </div>.
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
