@@ -1,51 +1,60 @@
 import { createSlice } from '@reduxjs/toolkit';
+import LmsSystemImage from '../../assets/Lms-system.png';
+import Ecommerce from '../../assets/Ecommerce.png';
+import Gemini from '../../assets/Gemini-Clone.png';
+import Apple from '../../assets/Apple-Clone.png';
+import Poftfolio from '../../assets/portfolio.png';
 
-// Sample project data
 const projectsData = [
   {
     id: 1,
     name: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with product listings, cart functionality, and payment processing.',
-    image: '/projects/ecommerce.jpg',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
+    description: 'An online shopping platform that allows users to browse products, add items to a cart, and securely complete purchases with integrated payment processing.',
+    image: Ecommerce,
+    technologies: ['React', 'Context', 'CSS', 'Lucide-react'],
     link: 'https://github.com/yourusername/ecommerce',
     demo: 'https://ecommerce-demo.yourdomain.com',
+    status: 'in-progress'
   },
   {
     id: 2,
-    name: 'Task Management App',
-    description: 'A productivity application for managing tasks, projects, and deadlines with team collaboration features.',
-    image: '/projects/taskmanager.jpg',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
+    name: 'LMS System',
+    description: 'A Learning Management System designed to offer course creation, progress tracking, and interactive learning features for students and instructors.',
+    image: LmsSystemImage,
+    technologies: ['React', 'Clerk', 'Tailwind CSS', 'Redux', 'React Router'],
     link: 'https://github.com/yourusername/taskmanager',
-    demo: 'https://taskmanager-demo.yourdomain.com',
+    demo: 'https://www.google.com',
+    status: 'in-progress'
   },
   {
     id: 3,
-    name: 'Weather Dashboard',
-    description: 'A weather application that provides current conditions and forecasts for locations worldwide.',
-    image: '/projects/weather.jpg',
-    technologies: ['JavaScript', 'HTML', 'CSS', 'API Integration'],
+    name: 'Gemini Clone',
+    description: 'A UI/UX clone of Google’s Gemini AI interface built to replicate its layout and design for experimentation and learning purposes.',
+    image: Gemini,
+    technologies: ['JavaScript', 'React', 'Tailwind CSS', 'API Integration'],
     link: 'https://github.com/yourusername/weather-dashboard',
     demo: 'https://weather-demo.yourdomain.com',
+    status: 'in-progress'
   },
   {
     id: 4,
-    name: 'Social Media Platform',
-    description: 'A social networking application with user profiles, posts, comments, and real-time messaging.',
-    image: '/projects/socialmedia.jpg',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
+    name: 'Apple Clone',
+    description: 'A front-end replica of Apple’s official website, showcasing smooth transitions, premium design aesthetics, and responsive layouts.',
+    image: Apple,
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Redux', 'Lucide-react', 'React Router'],
     link: 'https://github.com/yourusername/social-platform',
     demo: 'https://social-demo.yourdomain.com',
+    status: 'in-progress'
   },
   {
     id: 5,
     name: 'Portfolio Website',
-    description: 'A personal portfolio website showcasing projects, skills, and professional experience.',
-    image: '/projects/portfolio.jpg',
-    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Redux'],
+    description: 'A modern and responsive personal portfolio to highlight web development projects, skills, and professional background.',
+    image: Poftfolio,
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Redux', 'Lucide-react', 'React Router'],
     link: 'https://github.com/yourusername/portfolio',
     demo: 'https://portfolio-demo.yourdomain.com',
+    status: 'in-progress'
   },
 ];
 

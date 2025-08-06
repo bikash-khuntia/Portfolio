@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme, selectDarkMode } from '../store/slices/themeSlice';
 import { Sun, Moon, Menu, X } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
+  const navigate = useNavigate();
 
   const navLinks = [
     { id: 'home', label: 'Home' },
@@ -67,7 +68,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 font-bold text-xl cursor-pointer" onClick={() => scrollToSection('home')}>
-            <span className="text-indigo-600 dark:text-indigo-400">Portfolio</span>
+            <span className="text-indigo-600 dark:text-indigo-400" onClick={() => navigate('/')}>Portfolio</span>
           </div>
 
           {/* Desktop Navigation */}

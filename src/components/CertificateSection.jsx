@@ -1,6 +1,6 @@
-import namaste from '../../public/projects/certificate.webp'
-// import img from '../../public/projects/new_image.jpeg'
-
+import namaste from '../assets/certificate.webp'
+import fullStack from '../assets/FullStack-webDevelopment.png'
+import internshala from '../assets/Internshala.png'
 
 const certificates = [
   {
@@ -12,14 +12,22 @@ const certificates = [
       'Hooks',
       'Routing',
       'API Integration',
+      'ReduxToolkit',
+      'Async Thunk',
     ],
   },
   {
-    title: 'Web Development',
-    image: '/certificates/how.png',
+    title: 'Full Stack Web Development',
+    image: fullStack,
     issuer: 'Apana College',
     keyLearnings: ["Html", "Css", "Javascript", "Tailwindcss", "Node.js", "Express.js", "Mongodb"],
   },
+  {
+    title: 'Web Development',
+    image:internshala  ,
+    issuer: 'Internshala',
+    keyLearnings: ["Html", "Css", "Javascript", "Tailwindcss"],
+  }
 ];
 
 export default function CertificateSection() {
@@ -38,7 +46,7 @@ export default function CertificateSection() {
               <img
                 src={cert.image}
                 alt={cert.title}
-                className="w-full h-40 object-cover rounded-md mb-4"
+                className="w-full h-70 object-cover rounded-md mb-4"
               />
               <h3 className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">
                 {cert.title}

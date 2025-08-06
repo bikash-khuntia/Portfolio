@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectProjects, selectActiveFilters, filterProjects, clearFilters } from '../store/slices/projectsSlice';
 import { selectDarkMode } from '../store/slices/themeSlice';
 import { ExternalLink, Github, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const dispatch = useDispatch();
@@ -109,7 +110,7 @@ const Projects = () => {
                 variants={itemVariants}
                 className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} transition-transform duration-300 hover:-translate-y-2`}
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-88 overflow-hidden">
                   <img 
                     src={project.image || 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'} 
                     alt={project.name} 
@@ -142,16 +143,24 @@ const Projects = () => {
                       <Github size={18} />
                       <span>Code</span>
                     </a>
-                    
-                    <a 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                      <span>Live Demo</span>
-                    </a>
+                    {project.status === 'completed' ? (
+                      <a 
+                        href={project.demo} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                      >
+                        <ExternalLink size={18} />
+                        <span>Live Demo</span>
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-1">
+                        <ExternalLink size={18} className='text-white'/>
+                        <Link to="/coming-soon">
+                          <button className="flex items-center gap-1 text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Live Demo</button>
+                        </Link>
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>

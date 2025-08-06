@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectDarkMode } from './store/slices/themeSlice';
 import ThemeProvider from './components/ThemeProvider';
@@ -10,6 +9,9 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CertificateSection from './components/CertificateSection';
+import ComingSoon from './pages/ComingSoon'; 
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
 function App() {
   const darkMode = useSelector(selectDarkMode);
@@ -17,16 +19,27 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen dark:bg-gray-900 transition-colors duration-300">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <CertificateSection/>
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <main>
+                  <Hero />
+                  <About />
+                  <Skills />
+                  <CertificateSection />
+                  <Projects />
+                  <Contact />
+                </main>
+              }
+            />
+            <Route path="/" element={<Hero />} />
+            <Route path="/coming-soon" element={<ComingSoon />} /> 
+          </Routes>
+          <Footer />
+        </Router>
       </div>
     </ThemeProvider>
   );

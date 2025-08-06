@@ -58,7 +58,7 @@ const Contact = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h4>
                   <a href="mailto:your.email@example.com" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
-                    your.email@example.com
+                    bikashkhuntia2600@gmail.com
                   </a>
                 </div>
               </div>
@@ -70,7 +70,7 @@ const Contact = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Phone</h4>
                   <a href="tel:+1234567890" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
-                    +1 (234) 567-890
+                    8144956321
                   </a>
                 </div>
               </div>
@@ -91,14 +91,14 @@ const Contact = () => {
             <div className="mt-10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Me</h3>
               <div className="flex space-x-4">
-                <a 
+                {/* <a 
                   href="https://github.com/yourusername" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors"
                 >
                   <Github className="w-6 h-6 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400" />
-                </a>
+                </a> */}
                 <a 
                   href="https://www.linkedin.com/in/bikash-khuntia" 
                   target="_blank" 
@@ -170,7 +170,7 @@ const Contact = () => {
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
                 )}
-              </div>.
+              </div>
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
