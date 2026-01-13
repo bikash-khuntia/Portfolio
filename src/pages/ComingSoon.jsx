@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectDarkMode } from '../store/slices/themeSlice';
 import { Wrench, Hourglass, AlertTriangle } from 'lucide-react'; // Icons
@@ -7,6 +8,10 @@ import { useNavigate } from 'react-router-dom';
 const ComingSoon = () => {
   const darkMode = useSelector(selectDarkMode);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return (
     <div className={`flex flex-col items-center justify-center min-h-screen px-4 text-center ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-800'}`}>

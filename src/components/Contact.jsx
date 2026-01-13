@@ -57,7 +57,7 @@ const Contact = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h4>
-                  <a href="mailto:your.email@example.com" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                  <a href="mailto:bikashkhuntia2600@gmail.com" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                     bikashkhuntia2600@gmail.com
                   </a>
                 </div>
@@ -91,14 +91,6 @@ const Contact = () => {
             <div className="mt-10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Me</h3>
               <div className="flex space-x-4">
-                {/* <a 
-                  href="https://github.com/yourusername" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors"
-                >
-                  <Github className="w-6 h-6 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400" />
-                </a> */}
                 <a 
                   href="https://www.linkedin.com/in/bikash-khuntia" 
                   target="_blank" 
@@ -189,7 +181,7 @@ const Contact = () => {
               </div>
               
               <motion.button
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 className="w-full flex justify-center items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md transition-colors"

@@ -22,9 +22,9 @@ const projectsData = [
     description: 'A Learning Management System designed to offer course creation, progress tracking, and interactive learning features for students and instructors.',
     image: LmsSystemImage,
     technologies: ['React', 'Clerk', 'Tailwind CSS', 'Redux', 'React Router'],
-    link: 'https://github.com/yourusername/taskmanager',
-    demo: 'https://www.google.com',
-    status: 'in-progress'
+    link: 'https://github.com/bikash-khuntia/Learning-management-system',
+    demo: 'https://learning-management-system-2.netlify.app',
+    status: 'completed'
   },
   {
     id: 3,
@@ -42,9 +42,9 @@ const projectsData = [
     description: 'A front-end replica of Apple’s official website, showcasing smooth transitions, premium design aesthetics, and responsive layouts.',
     image: Apple,
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Redux', 'Lucide-react', 'React Router'],
-    link: 'https://github.com/yourusername/social-platform',
-    demo: 'https://social-demo.yourdomain.com',
-    status: 'in-progress'
+    link: 'https://melodic-daifuku-949d52.netlify.app/',
+    demo: 'https://melodic-daifuku-949d52.netlify.app/',
+    status: 'completed'
   },
   {
     id: 5,
@@ -52,9 +52,9 @@ const projectsData = [
     description: 'A modern and responsive personal portfolio to highlight web development projects, skills, and professional background.',
     image: Poftfolio,
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Redux', 'Lucide-react', 'React Router'],
-    link: 'https://github.com/yourusername/portfolio',
-    demo: 'https://portfolio-demo.yourdomain.com',
-    status: 'in-progress'
+    link: 'https://github.com/bikash-khuntia/Portfolio',
+    demo: 'https://bikash-khuntia-portfolio.netlify.app',
+    status: 'completed'
   },
 ];
 
@@ -68,25 +68,28 @@ export const projectsSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
+
     filterProjects: (state, action) => {
       const technology = action.payload;
-      
-      // Toggle the filter
-      if (state.activeFilters.includes(technology)) {
-        state.activeFilters = state.activeFilters.filter(filter => filter !== technology);
-      } else {
-        state.activeFilters.push(technology);
-      }
-      
-      // Apply filters
-      if (state.activeFilters.length === 0) {
+
+      // Fix: Compare with first, but check if it's actually different
+      if (state.activeFilters.length === 1 && state.activeFilters[0] === technology) {
+        // Same filter clicked again → clear
+        state.activeFilters = [];
         state.filteredProjects = state.projects;
       } else {
-        state.filteredProjects = state.projects.filter(project => 
-          state.activeFilters.some(filter => project.technologies.includes(filter))
+        // New filter clicked → reset everything
+        state.activeFilters = [technology];
+        state.filteredProjects = state.projects.filter(project =>
+          project.technologies.some(
+            tech => tech.toLowerCase() === technology.toLowerCase()
+          )
         );
+        console.log(`Number of projects using ${technology}:`, state.filteredProjects.length);
       }
     },
+
+
     clearFilters: (state) => {
       state.activeFilters = [];
       state.filteredProjects = state.projects;

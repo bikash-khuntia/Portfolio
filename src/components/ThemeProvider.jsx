@@ -6,7 +6,6 @@ const ThemeProvider = ({ children }) => {
   const darkMode = useSelector(selectDarkMode);
 
   useEffect(() => {
-    // Apply or remove dark class based on darkMode state
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme, selectDarkMode } from '../store/slices/themeSlice';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
